@@ -4,7 +4,7 @@
 ## Introduction 
 This challenge blends stylized horror themes with practical offensive techniques. Inspired by Tokyo Ghoul, the box pushes you to think like a creative attacker — combining web fuzzing, steganography, hash cracking, and sandbox escape. It's a study in exploiting misconfigurations, decoding hidden clues, and chaining vulnerabilities to root. I’ll walk through each phase in technical detail, highlighting why every step mattered and how it reflects real-world attack surfaces.
 
-<img width="1500" height="646" alt="Screenshot (45)" src="https://github.com/user-attachments/assets/c3c3873a-e4a0-450c-8f04-16e191c81b2c" />
+<img width="7000" height="5000" alt="Screenshot (45)" src="https://github.com/user-attachments/assets/c3c3873a-e4a0-450c-8f04-16e191c81b2c" />
 
 
 ## Task2 – Where am I?
@@ -74,7 +74,7 @@ rize_and_kaneki.jpg
 
 need_to_talk
 
- Using the “rabina2 -z”, he need_to_talk file was a plain text note — cryptic and ominous — suggesting that something deeper was embedded in the image. It was jibberish, but there was a cleartext name at the top: 
+ Using rabin2 -z, I inspected the need_to_talk file — it was a cryptic note in plain text, hinting that something deeper was embedded in the image.
 
  
 <img width="1492" height="878" alt="Screenshot (44)" src="https://github.com/user-attachments/assets/a480cd20-8f5d-43d5-ac18-300fc8a5934d" />

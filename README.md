@@ -1,4 +1,4 @@
-# 🛡️ Offensive Security Projects
+#  Offensive Security Projects
 
 Welcome to my collection of hands-on **Red Teaming exercises and offensive security labs**. These projects simulate real-world attacker behavior to strengthen both offensive capabilities and defensive detection strategies.
 

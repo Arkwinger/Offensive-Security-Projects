@@ -1,4 +1,4 @@
-# UltraTech Walkthrough
+# UltraTech Walkthrough CTF
 
 <img width="579" height="571" alt="image" src="https://github.com/user-attachments/assets/38ff2086-c2a6-4c3c-80d4-6df7836deda7" />
 

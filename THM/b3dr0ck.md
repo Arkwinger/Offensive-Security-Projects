@@ -155,7 +155,7 @@ sudo /usr/bin/base32 /root/pass.txt | base32 -d | base64 -d
 sudo /usr/bin/base64 /root/pass.txt | base64 -d
 ```
 
-This produced the same secret used as the root password.
+Use https://crackstation.net/ to get the actual password.
 
 4. **Become root**  
 ```bash

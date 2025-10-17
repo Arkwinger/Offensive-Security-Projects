@@ -11,7 +11,7 @@
 ## Briefing
 
 - nginx on port **80** redirects to a custom TLS webserver on **4040**.
-- A TCP helper on **9001** serves TLS credential files (client key & certificate).
+- A TCP helper on **9009** serves TLS credential files (client key & certificate).
 - A TLS helper on **54321** accepts client certificates for authenticated requests.
 - Goal: obtain user flags (Barney & Fred) and the root flag.
 

@@ -172,8 +172,6 @@ cat /root/root.txt
 - `user.txt` (Fred): `THM{...}`  
 - `root.txt`: `THM{...}`
 
-*(Replace the placeholders with your captured flags when you publish privately; do not include keys in public posts.)*
-
 ---
 
 ## Key takeaways & remediations

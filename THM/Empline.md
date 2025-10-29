@@ -206,9 +206,10 @@ sudo getcap -r / 2>/dev/null
 
 Monitor filesystem/integrity and alert on unexpected ownership/content changes.
 
-Commands Reference:
+## Commands Reference:
+--- 
 
-```
+```bash
 # directory enumeration
 gobuster dir -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt -u http://job.empline.thm -t 50
 

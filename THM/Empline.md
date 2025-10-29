@@ -189,7 +189,22 @@ Confirm flag / root file:
 74*****d0556e9c6f22e6f54b*****d5
 ```
 
+---
+ 
+### Mitigation
 
+Remove unneeded capabilities:
+sudo setcap -r /usr/local/bin/ruby
+
+Restore strict ownership & permissions for sensitive files:
+sudo chown root:root /etc/passwd && sudo chmod 644 /etc/passwd
+
+Avoid placing secrets in webroot/config files; use env vars / vaults and rotate credentials if exposed.
+
+Harden runtime permissions: run interpreters without elevated capabilities and audit file capabilities:
+sudo getcap -r / 2>/dev/null
+
+Monitor filesystem/integrity and alert on unexpected ownership/content changes.
 
 
 

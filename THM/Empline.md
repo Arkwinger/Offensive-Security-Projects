@@ -1,8 +1,10 @@
 # TryHackMe — Empline — Walkthrough
 
+
+
 <img width="5001" height="444" alt="image" src="https://github.com/user-attachments/assets/72afb507-0b6b-496a-a6f2-1ede2f16aa5d" />
 
-
+---
 
 
 During initial browsing, the website presents as a single-page application with smooth anchor navigation; each header item jumps to a section on the same page. One exception was identified: hovering/clicking the Employment menu item reveals a link to job.empline.thm, indicating additional functionality hosted on a separate subdomain.

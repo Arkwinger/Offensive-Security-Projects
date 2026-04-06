@@ -215,4 +215,4 @@ Output:
 
 ##  Conclusion
 
-This box is a strong example of chaining multiple real-world techniques together. Each step reinforces the importance of proper enumeration, understanding execution flow, and recognizing when small misconfigurations can lead to full system compromise. 
+This box is an example of chaining multiple real-world techniques together. Each step reinforces the importance of proper enumeration, understanding execution flow, and recognizing when small misconfigurations can lead to full system compromise. 

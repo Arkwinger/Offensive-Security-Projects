@@ -83,7 +83,9 @@ Viewing page source revealed hardcoded credentials.
 
 <img width="1050" height="355" alt="image" src="https://github.com/user-attachments/assets/f1fd4f2b-afd0-4b1b-9011-39c0e80fbc5b" />
 
+```bash
 ssh alice@<TARGET_IP>
+```
 
 ---
 

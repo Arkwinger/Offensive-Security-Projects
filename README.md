@@ -1,9 +1,7 @@
-#  Offensive Security Projects
+# Offensive Security Projects
 
-Welcome to my collection of hands-on **Red Teaming exercises and offensive security labs**. These projects simulate real-world attacker behavior to strengthen both offensive capabilities and defensive detection strategies.
+A collection of offensive security projects, tools, labs, and experiments.
 
-By emulating adversarial tactics, techniques, and procedures (TTPs), I gain deeper insight into how threats operate — and how defenders can recognize, investigate, and respond effectively.
-
-Each lab reflects a unique exploitation path, ranging from initial access to privilege escalation and post-exploitation. Whether it's bypassing defenses or tracing callbacks in network captures, this portfolio blends both Red and Blue perspectives for a full-spectrum security mindset.
+This repository contains work related to red teaming, security research, automation, adversary emulation, web applications, network security, and other areas of offensive cybersecurity. Some projects are built from scratch, while others are based on concepts explored through labs, training, and personal research.
 
 
